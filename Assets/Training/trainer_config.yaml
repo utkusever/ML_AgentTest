@@ -1,9 +1,9 @@
 behaviors:
-  Basic:
+  Hummingbird:
     trainer_type: ppo
     hyperparameters:
-      batch_size: 32
-      buffer_size: 256
+      batch_size: 2048
+      buffer_size: 20480
       learning_rate: 0.0003
       beta: 0.005
       epsilon: 0.2
@@ -12,15 +12,15 @@ behaviors:
       learning_rate_schedule: linear
     network_settings:
       normalize: false
-      hidden_units: 20
-      num_layers: 1
+      hidden_units: 256
+      num_layers: 2
       vis_encode_type: simple
     reward_signals:
       extrinsic:
         gamma: 0.9
         strength: 1.0
     keep_checkpoints: 5
-    max_steps: 500000
-    time_horizon: 3
+    max_steps: 1500000
+    time_horizon: 128
     summary_freq: 2000
     threaded: true

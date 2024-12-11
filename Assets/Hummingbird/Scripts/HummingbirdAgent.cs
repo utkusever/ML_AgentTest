@@ -92,8 +92,8 @@ public class HummingbirdAgent : Agent
         bool inFrontOffFlower = true;
         if (trainingMode)
         {
-            //Spawn in front of flower 50% of the time during training
-            inFrontOffFlower = Random.value > 0.5f;
+            //Spawn in front of flower 80% of the time during training
+            inFrontOffFlower = Random.value > 0.2f;
         }
 
         // move agent to a new random position
@@ -272,7 +272,7 @@ public class HummingbirdAgent : Agent
                 Flower randomFlower = flowerArea.Flowers[Random.Range(0, flowerArea.Flowers.Count)];
 
                 // position 10 to 20 cm in front of the flower
-                float distanceFromFlower = Random.Range(0.1f, 0.2f);
+                float distanceFromFlower = Random.Range(0.05f, 0.1f);
                 potentialPosition = randomFlower.transform.position + randomFlower.FlowerUpVector * distanceFromFlower;
 
                 // point beak at flower (bird's head is center of transform)
