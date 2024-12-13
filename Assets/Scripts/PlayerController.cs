@@ -1,20 +1,56 @@
-﻿using UnityEngine;
+﻿using System;
+using Unity.MLAgents;
+using Unity.MLAgents.Actuators;
+using Unity.MLAgents.Sensors;
+using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : Agent
 {
-    [Header("References")]
-    public GameManager gameManager;
+    [Header("References")] public GameManager gameManager;
     public Transform playerSpawnLocation;
+    public float targetYPosition;
 
-    [Header("Settings")]
-    public string targetTag = "target";
+    [Header("Settings")] public string targetTag = "target";
     public float upwardForceScaler = 100f;
 
     new Rigidbody rigidbody;
 
-    void Awake()
+    public override void Initialize()
     {
         rigidbody = GetComponent<Rigidbody>();
+    }
+
+    public override void OnEpisodeBegin()
+    {
+        Reset();
+    }
+
+    public override void Heuristic(in ActionBuffers actionsOut)
+    {
+        var actions = actionsOut.ContinuousActions;
+        //take key input
+        actions[0] = 0; // idle
+        if (Input.GetKey(KeyCode.Space))
+        {
+            actions[0] = 1; // fly
+        }
+    }
+
+    public override void CollectObservations(VectorSensor sensor)
+    {
+        // player's y pos
+        sensor.AddObservation(transform.position.y);
+        //target's y pos
+        sensor.AddObservation(targetYPosition);
+    }
+
+    public override void OnActionReceived(ActionBuffers actions)
+    {
+        var actionsArray = actions.ContinuousActions;
+        if (Mathf.FloorToInt(actionsArray[0]) == 1)
+        {
+            Fly();
+        }
     }
 
     public void Reset()
@@ -24,14 +60,8 @@ public class PlayerController : MonoBehaviour
         rigidbody.velocity = Vector3.zero;
     }
 
-    void FixedUpdate()
+    private void FixedUpdate()
     {
-        //take key input
-        if (Input.GetKey(KeyCode.Space))
-        {
-            Fly();
-        }
-
         //raycast out the z direction
         Ray ray = new Ray(transform.position, transform.forward);
         Debug.DrawRay(transform.position, transform.forward, Color.red, 1f);
@@ -45,10 +75,15 @@ public class PlayerController : MonoBehaviour
             }
         }
 
+        if (transform.position.y > 10f)
+        {
+            AddReward(-0.1f);
+        }
     }
 
     void HandleTargetHit()
     {
+        AddReward(1f);
         //hit a target, so let the GameManager know
         gameManager.TargetHit();
     }

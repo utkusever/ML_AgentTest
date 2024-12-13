@@ -3,8 +3,7 @@ using TMPro;
 
 public class GameManager : MonoBehaviour
 {
-    [Header("References")]
-    public TextMeshProUGUI scoreText;
+    [Header("References")] public TextMeshProUGUI scoreText;
     public TextMeshProUGUI timerText;
     public PlayerController playerController;
     public GameObject targetPrefab;
@@ -21,6 +20,8 @@ public class GameManager : MonoBehaviour
 
     public void GameReset()
     {
+        playerController.EndEpisode();
+
         SpawnTarget();
         playerController.Reset();
 
@@ -54,6 +55,7 @@ public class GameManager : MonoBehaviour
 
         //get a random y value and spawn the target (flower) at that height
         spawnLocation.y = Random.Range(1f, 5f);
+        playerController.targetYPosition = spawnLocation.y;
         currentTarget = Instantiate(targetPrefab, transform.position + spawnLocation, Quaternion.identity);
     }
 

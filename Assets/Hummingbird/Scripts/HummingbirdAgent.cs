@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Unity.MLAgents;
 using Unity.MLAgents.Actuators;
 using Unity.MLAgents.Sensors;
@@ -270,7 +271,7 @@ public class HummingbirdAgent : Agent
             {
                 // pick a random flower
                 Flower randomFlower = flowerArea.Flowers[Random.Range(0, flowerArea.Flowers.Count)];
-
+            print(flowerArea.Flowers.Count());
                 // position 10 to 20 cm in front of the flower
                 float distanceFromFlower = Random.Range(0.05f, 0.1f);
                 potentialPosition = randomFlower.transform.position + randomFlower.FlowerUpVector * distanceFromFlower;
