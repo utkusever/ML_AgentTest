@@ -1,0 +1,38 @@
+{
+    "Flying": {
+        "checkpoints": [
+            {
+                "steps": 499927,
+                "file_path": "results/fly_0.2/Flying/Flying-499927.onnx",
+                "reward": 8.17741935483871,
+                "creation_time": 1734341291.09862,
+                "auxillary_file_paths": [
+                    "results/fly_0.2/Flying/Flying-499927.pt"
+                ]
+            },
+            {
+                "steps": 500031,
+                "file_path": "results/fly_0.2/Flying/Flying-500031.onnx",
+                "reward": 8.158730158730158,
+                "creation_time": 1734341291.123716,
+                "auxillary_file_paths": [
+                    "results/fly_0.2/Flying/Flying-500031.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 500031,
+            "file_path": "results/fly_0.2/Flying.onnx",
+            "reward": 8.158730158730158,
+            "creation_time": 1734341291.123716,
+            "auxillary_file_paths": [
+                "results/fly_0.2/Flying/Flying-500031.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.30.0",
+        "torch_version": "1.11.0"
+    }
+}
