@@ -27,7 +27,7 @@ public class PlayerController : Agent
 
     public override void Heuristic(in ActionBuffers actionsOut)
     {
-        var actions = actionsOut.ContinuousActions;
+        var actions = actionsOut.DiscreteActions;
         //take key input
         actions[0] = 0; // idle
         if (Input.GetKey(KeyCode.Space))
@@ -46,7 +46,7 @@ public class PlayerController : Agent
 
     public override void OnActionReceived(ActionBuffers actions)
     {
-        var actionsArray = actions.ContinuousActions;
+        var actionsArray = actions.DiscreteActions;
         if (Mathf.FloorToInt(actionsArray[0]) == 1)
         {
             Fly();

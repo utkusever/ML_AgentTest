@@ -1,0 +1,49 @@
+{
+    "name": "root",
+    "metadata": {
+        "timer_format_version": "0.1.0",
+        "start_time_seconds": "1734334560",
+        "python_version": "3.9.21 (main, Dec 11 2024, 10:21:40) \n[Clang 14.0.6 ]",
+        "command_line_arguments": "/opt/anaconda3/envs/mlagent1.1/bin/mlagents-learn trainer_config.yaml --run-id fly_01 --resume",
+        "mlagents_version": "0.30.0",
+        "mlagents_envs_version": "0.30.0",
+        "communication_protocol_version": "1.5.0",
+        "pytorch_version": "1.11.0",
+        "numpy_version": "1.21.2",
+        "end_time_seconds": "1734334565"
+    },
+    "total": 5.3926996250000006,
+    "count": 1,
+    "self": 0.006640168000000557,
+    "children": {
+        "run_training.setup": {
+            "total": 0.014107666000000019,
+            "count": 1,
+            "self": 0.014107666000000019
+        },
+        "TrainerController.start_learning": {
+            "total": 5.371951791,
+            "count": 1,
+            "self": 8.704199999964857e-05,
+            "children": {
+                "TrainerController._reset_env": {
+                    "total": 5.306450541,
+                    "count": 1,
+                    "self": 5.306450541
+                },
+                "TrainerController._save_models": {
+                    "total": 0.06541420799999997,
+                    "count": 1,
+                    "self": 0.000324415999999772,
+                    "children": {
+                        "RLTrainer._checkpoint": {
+                            "total": 0.0650897920000002,
+                            "count": 1,
+                            "self": 0.0650897920000002
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
