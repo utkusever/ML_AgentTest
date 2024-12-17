@@ -1,0 +1,65 @@
+{
+    "Balancer": {
+        "checkpoints": [
+            {
+                "steps": 499953,
+                "file_path": "results/balance_04/Balancer/Balancer-499953.onnx",
+                "reward": -0.4188976212749331,
+                "creation_time": 1734424410.645053,
+                "auxillary_file_paths": [
+                    "results/balance_04/Balancer/Balancer-499953.pt"
+                ]
+            },
+            {
+                "steps": 999993,
+                "file_path": "results/balance_04/Balancer/Balancer-999993.onnx",
+                "reward": 0.054285746387072974,
+                "creation_time": 1734426942.124761,
+                "auxillary_file_paths": [
+                    "results/balance_04/Balancer/Balancer-999993.pt"
+                ]
+            },
+            {
+                "steps": 1499975,
+                "file_path": "results/balance_04/Balancer/Balancer-1499975.onnx",
+                "reward": 9.800000429153442,
+                "creation_time": 1734429475.269679,
+                "auxillary_file_paths": [
+                    "results/balance_04/Balancer/Balancer-1499975.pt"
+                ]
+            },
+            {
+                "steps": 1999963,
+                "file_path": "results/balance_04/Balancer/Balancer-1999963.onnx",
+                "reward": 9.80000028014183,
+                "creation_time": 1734432009.182699,
+                "auxillary_file_paths": [
+                    "results/balance_04/Balancer/Balancer-1999963.pt"
+                ]
+            },
+            {
+                "steps": 2187924,
+                "file_path": "results/balance_04/Balancer/Balancer-2187924.onnx",
+                "reward": 16.72857197693416,
+                "creation_time": 1734432965.410621,
+                "auxillary_file_paths": [
+                    "results/balance_04/Balancer/Balancer-2187924.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 2187924,
+            "file_path": "results/balance_04/Balancer.onnx",
+            "reward": 16.72857197693416,
+            "creation_time": 1734432965.410621,
+            "auxillary_file_paths": [
+                "results/balance_04/Balancer/Balancer-2187924.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.30.0",
+        "torch_version": "1.11.0"
+    }
+}

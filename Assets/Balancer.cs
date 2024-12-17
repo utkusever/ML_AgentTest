@@ -89,9 +89,14 @@ public class Balancer : Agent
         sensor.AddObservation(this.transform.localRotation); //balancer rot = 4 observation
     }
 
+    private Vector3 stockPos;
+    private Vector3 ballStockPos;
+
     public override void Initialize()
     {
         base.Initialize();
+        stockPos = this.transform.position;
+        ballStockPos = this.transform.position;
     }
 
     public override void OnEpisodeBegin()
@@ -99,8 +104,8 @@ public class Balancer : Agent
         // zero out velocities so that movement stops before a new episode begins
         ballRB.velocity = Vector3.zero;
         ballRB.angularVelocity = Vector3.zero;
-        ball.transform.position = Vector3.zero;
-        this.transform.position = Vector3.zero;
+        ball.transform.position = ballStockPos;
+        this.transform.position = stockPos;
         this.transform.rotation = Quaternion.Euler(Vector3.zero);
         this.transform.rotation = Quaternion.Euler(Random.Range(-30f, 30f), 0, Random.Range(-30f, 30));
     }

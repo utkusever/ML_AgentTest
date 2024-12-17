@@ -1,0 +1,49 @@
+{
+    "name": "root",
+    "metadata": {
+        "timer_format_version": "0.1.0",
+        "start_time_seconds": "1734416671",
+        "python_version": "3.9.21 (main, Dec 11 2024, 10:21:40) \n[Clang 14.0.6 ]",
+        "command_line_arguments": "/opt/anaconda3/envs/mlagent-ball/bin/mlagents-learn trainer_config.yaml --run-id balance_01 --resume",
+        "mlagents_version": "0.30.0",
+        "mlagents_envs_version": "0.30.0",
+        "communication_protocol_version": "1.5.0",
+        "pytorch_version": "1.11.0",
+        "numpy_version": "1.21.2",
+        "end_time_seconds": "1734416677"
+    },
+    "total": 5.368631875,
+    "count": 1,
+    "self": 0.006529792000000256,
+    "children": {
+        "run_training.setup": {
+            "total": 0.012532874999999999,
+            "count": 1,
+            "self": 0.012532874999999999
+        },
+        "TrainerController.start_learning": {
+            "total": 5.349569208,
+            "count": 1,
+            "self": 4.008300000002407e-05,
+            "children": {
+                "TrainerController._reset_env": {
+                    "total": 5.266704667,
+                    "count": 1,
+                    "self": 5.266704667
+                },
+                "TrainerController._save_models": {
+                    "total": 0.08282445800000016,
+                    "count": 1,
+                    "self": 0.0006841660000000971,
+                    "children": {
+                        "RLTrainer._checkpoint": {
+                            "total": 0.08214029200000006,
+                            "count": 1,
+                            "self": 0.08214029200000006
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

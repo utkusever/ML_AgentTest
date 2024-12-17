@@ -1,0 +1,56 @@
+{
+    "Balancer": {
+        "checkpoints": [
+            {
+                "steps": 3603,
+                "file_path": "results/balance_03/Balancer/Balancer-3603.onnx",
+                "reward": -0.6399999884267648,
+                "creation_time": 1734419946.5451782,
+                "auxillary_file_paths": [
+                    "results/balance_03/Balancer/Balancer-3603.pt"
+                ]
+            },
+            {
+                "steps": 499983,
+                "file_path": "results/balance_03/Balancer/Balancer-499983.onnx",
+                "reward": -0.7608695567949958,
+                "creation_time": 1734421065.085233,
+                "auxillary_file_paths": [
+                    "results/balance_03/Balancer/Balancer-499983.pt"
+                ]
+            },
+            {
+                "steps": 999998,
+                "file_path": "results/balance_03/Balancer/Balancer-999998.onnx",
+                "reward": -0.7419148861093724,
+                "creation_time": 1734421728.850395,
+                "auxillary_file_paths": [
+                    "results/balance_03/Balancer/Balancer-999998.pt"
+                ]
+            },
+            {
+                "steps": 1000033,
+                "file_path": "results/balance_03/Balancer/Balancer-1000033.onnx",
+                "reward": -0.7416135806693139,
+                "creation_time": 1734421728.891027,
+                "auxillary_file_paths": [
+                    "results/balance_03/Balancer/Balancer-1000033.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 1000033,
+            "file_path": "results/balance_03/Balancer.onnx",
+            "reward": -0.7416135806693139,
+            "creation_time": 1734421728.891027,
+            "auxillary_file_paths": [
+                "results/balance_03/Balancer/Balancer-1000033.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.30.0",
+        "torch_version": "1.11.0"
+    }
+}
